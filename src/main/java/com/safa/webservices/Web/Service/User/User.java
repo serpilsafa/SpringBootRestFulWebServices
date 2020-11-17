@@ -1,15 +1,21 @@
 package com.safa.webservices.Web.Service.User;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import java.util.Date;
 
+@ApiModel(description = "All Detail about the user")
 public class User {
     private Integer id;
 
     @Size(min = 2, message = "Name size should be latest 2 characters")
+    @ApiModelProperty( notes = "Name should have atleast 2 characters")
     private String name;
     @Past
+    @ApiModelProperty(notes = "Birthday should be past")
     private Date birthday;
 
     public User(Integer id, String name, Date birthday) {
