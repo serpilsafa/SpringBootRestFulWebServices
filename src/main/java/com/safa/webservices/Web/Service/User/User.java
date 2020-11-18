@@ -25,6 +25,7 @@ public class User {
     @ApiModelProperty(notes = "Birthday should be past")
     private Date birthday;
 
+    public User(){}
     public User(Integer id, String name, Date birthday) {
         this.id = id;
         this.name = name;
